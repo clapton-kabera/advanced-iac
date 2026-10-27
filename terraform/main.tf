@@ -18,19 +18,19 @@ terraform {
       source  = "hashicorp/aws"
       version = "~> 6.70.0"
     }
-    
+
     http = {
-      source = "hashicorp/http"
+      source  = "hashicorp/http"
       version = "~> 3.6.3"
     }
 
     tls = {
-      source = "hashicorp/tls"
+      source  = "hashicorp/tls"
       version = "~> 4.4.2"
     }
 
     local = {
-      source = "hashicorp/local"
+      source  = "hashicorp/local"
       version = "~> 2.9.1"
     }
   }
@@ -154,7 +154,7 @@ resource "aws_vpc_security_group_ingress_rule" "ssh_rule" {
 resource "aws_vpc_security_group_egress_rule" "all_outbound" {
   security_group_id = aws_security_group.sandbox_sec_grp.id
 
-  cidr_ipv4 = var.egress_cidr
+  cidr_ipv4   = var.egress_cidr
   ip_protocol = "-1"
 }
 
@@ -201,7 +201,7 @@ resource "aws_instance" "sandbox_server" {
 resource "local_file" "ansible_inventory" {
   content = templatefile("${path.root}/inventory.tftpl", {
     ec2_public_ip = aws_instance.sandbox_server.public_ip
-    key_path = abspath(local_sensitive_file.key_file.filename)
+    key_path      = abspath(local_sensitive_file.key_file.filename)
   })
 
   filename = "${path.root}/../ansible/inventory.ini"
@@ -218,7 +218,7 @@ resource "tls_private_key" "ssh" {
   Create the key pair to help us ssh into the ec2 instance
 */
 resource "aws_key_pair" "admin_key" {
-  key_name   = "${var.key_name}"
+  key_name   = var.key_name
   public_key = tls_private_key.ssh.public_key_openssh
 }
 
@@ -226,8 +226,8 @@ resource "aws_key_pair" "admin_key" {
   Store the private key in a .pem file locally
 */
 resource "local_sensitive_file" "key_file" {
-  content = tls_private_key.ssh.private_key_openssh
-  filename = "${path.root}/${var.key_name}.pem"
+  content         = tls_private_key.ssh.private_key_openssh
+  filename        = "${path.root}/${var.key_name}.pem"
   file_permission = "0400"
 }
 

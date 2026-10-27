@@ -1,0 +1,11 @@
+---
+# the main playbook for the ec2 instance created by terraform
+- name: Configure web server
+  hosts: web_servers
+  become: true
+  pre_tasks:
+    - name: Wait for ssh connection to work
+      ansible.builtin.wait_for_connection:
+        timeout: 300
+  roles:
+    - nginx

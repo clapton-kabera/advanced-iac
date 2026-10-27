@@ -1,0 +1,462 @@
+[0m[1mtls_private_key.ssh: Refreshing state... [id=f373dd5c4520b74d5a7f8e9afb68cab14357bd51][0m
+[0m[1mdata.http.my_public_ip: Reading...[0m[0m
+[0m[1mlocal_sensitive_file.key_file: Refreshing state... [id=33ae51ddac70aec761a68bde50bcafae660324ce][0m
+[0m[1mdata.http.my_public_ip: Read complete after 0s [id=https://checkip.amazonaws.com][0m
+[0m[1mdata.aws_ami.al2_latest: Reading...[0m[0m
+[0m[1maws_key_pair.admin_key: Refreshing state... [id=admin-key][0m
+[0m[1maws_vpc.sandbox_vpc: Refreshing state... [id=vpc-005230e2d95bf1721][0m
+[0m[1mdata.aws_ami.al2_latest: Read complete after 1s [id=ami-006e10067da012d16][0m
+[0m[1maws_internet_gateway.sandbox_gw: Refreshing state... [id=igw-0c8ce77fe6e2c6251][0m
+[0m[1maws_subnet.sandbox_pub_subnet: Refreshing state... [id=subnet-0efeed2042e2e1d2b][0m
+[0m[1maws_security_group.sandbox_sec_grp: Refreshing state... [id=sg-030e789f2313ef4d3][0m
+[0m[1maws_route_table.sandbox_route_table: Refreshing state... [id=rtb-0bf99af254b50471f][0m
+[0m[1maws_vpc_security_group_ingress_rule.http_rule: Refreshing state... [id=sgr-0332b9cc98dad20d9][0m
+[0m[1maws_vpc_security_group_egress_rule.all_outbound: Refreshing state... [id=sgr-0b27de934a2260a52][0m
+[0m[1maws_vpc_security_group_ingress_rule.ssh_rule: Refreshing state... [id=sgr-07e7dfa72105dbac2][0m
+[0m[1maws_instance.sandbox_server: Refreshing state... [id=i-0613f724921de1bcc][0m
+[0m[1maws_route_table_association.rtb_subnet: Refreshing state... [id=rtbassoc-05354ad5b8738b275][0m
+[0m[1mlocal_file.ansible_inventory: Refreshing state... [id=4e08bdcde74d8c6dbd6dfd98924afc026fe5101d][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [31m-[0m destroy[0m
+
+Terraform will perform the following actions:
+
+[1m  # aws_instance.sandbox_server[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_instance" "sandbox_server" {
+      [31m-[0m[0m ami                                  = "ami-006e10067da012d16" [90m-> null[0m[0m
+      [31m-[0m[0m arn                                  = "arn:aws:ec2:eu-west-1:771826808190:instance/i-0613f724921de1bcc" [90m-> null[0m[0m
+      [31m-[0m[0m associate_public_ip_address          = true [90m-> null[0m[0m
+      [31m-[0m[0m availability_zone                    = "eu-west-1c" [90m-> null[0m[0m
+      [31m-[0m[0m disable_api_stop                     = false [90m-> null[0m[0m
+      [31m-[0m[0m disable_api_termination              = false [90m-> null[0m[0m
+      [31m-[0m[0m ebs_optimized                        = false [90m-> null[0m[0m
+      [31m-[0m[0m force_destroy                        = false [90m-> null[0m[0m
+      [31m-[0m[0m get_password_data                    = false [90m-> null[0m[0m
+      [31m-[0m[0m hibernation                          = false [90m-> null[0m[0m
+      [31m-[0m[0m id                                   = "i-0613f724921de1bcc" [90m-> null[0m[0m
+      [31m-[0m[0m instance_initiated_shutdown_behavior = "stop" [90m-> null[0m[0m
+      [31m-[0m[0m instance_state                       = "running" [90m-> null[0m[0m
+      [31m-[0m[0m instance_type                        = "t2.micro" [90m-> null[0m[0m
+      [31m-[0m[0m ipv6_address_count                   = 0 [90m-> null[0m[0m
+      [31m-[0m[0m ipv6_addresses                       = [] [90m-> null[0m[0m
+      [31m-[0m[0m key_name                             = "admin-key" [90m-> null[0m[0m
+      [31m-[0m[0m monitoring                           = false [90m-> null[0m[0m
+      [31m-[0m[0m placement_partition_number           = 0 [90m-> null[0m[0m
+      [31m-[0m[0m primary_network_interface_id         = "eni-0c79ab61317efbddb" [90m-> null[0m[0m
+      [31m-[0m[0m private_dns                          = "ip-10-0-1-146.eu-west-1.compute.internal" [90m-> null[0m[0m
+      [31m-[0m[0m private_ip                           = "10.0.1.146" [90m-> null[0m[0m
+      [31m-[0m[0m public_ip                            = "34.249.61.173" [90m-> null[0m[0m
+      [31m-[0m[0m region                               = "eu-west-1" [90m-> null[0m[0m
+      [31m-[0m[0m secondary_private_ips                = [] [90m-> null[0m[0m
+      [31m-[0m[0m security_groups                      = [] [90m-> null[0m[0m
+      [31m-[0m[0m source_dest_check                    = true [90m-> null[0m[0m
+      [31m-[0m[0m subnet_id                            = "subnet-0efeed2042e2e1d2b" [90m-> null[0m[0m
+      [31m-[0m[0m tags                                 = {
+          [31m-[0m[0m "Name"  = "sandbox-server"
+          [31m-[0m[0m "Owner" = "sandbox-admin"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m tags_all                             = {
+          [31m-[0m[0m "Name"    = "sandbox-server"
+          [31m-[0m[0m "Owner"   = "sandbox-admin"
+          [31m-[0m[0m "Project" = "advanced-iac-terraform-ansible"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m tenancy                              = "default" [90m-> null[0m[0m
+      [31m-[0m[0m user_data_replace_on_change          = false [90m-> null[0m[0m
+      [31m-[0m[0m vpc_security_group_ids               = [
+          [31m-[0m[0m "sg-030e789f2313ef4d3",
+        ] [90m-> null[0m[0m
+        [90m# (9 unchanged attributes hidden)[0m[0m
+
+      [31m-[0m[0m capacity_reservation_specification {
+          [31m-[0m[0m capacity_reservation_preference = "open" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m cpu_options {
+          [31m-[0m[0m core_count            = 1 [90m-> null[0m[0m
+          [31m-[0m[0m threads_per_core      = 1 [90m-> null[0m[0m
+            [90m# (2 unchanged attributes hidden)[0m[0m
+        }
+
+      [31m-[0m[0m credit_specification {
+          [31m-[0m[0m cpu_credits = "standard" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m enclave_options {
+          [31m-[0m[0m enabled = false [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m maintenance_options {
+          [31m-[0m[0m auto_recovery = "default" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m metadata_options {
+          [31m-[0m[0m http_endpoint               = "enabled" [90m-> null[0m[0m
+          [31m-[0m[0m http_protocol_ipv6          = "disabled" [90m-> null[0m[0m
+          [31m-[0m[0m http_put_response_hop_limit = 1 [90m-> null[0m[0m
+          [31m-[0m[0m http_tokens                 = "optional" [90m-> null[0m[0m
+          [31m-[0m[0m instance_metadata_tags      = "disabled" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m primary_network_interface {
+          [31m-[0m[0m delete_on_termination = true [90m-> null[0m[0m
+          [31m-[0m[0m network_interface_id  = "eni-0c79ab61317efbddb" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m private_dns_name_options {
+          [31m-[0m[0m enable_resource_name_dns_a_record    = false [90m-> null[0m[0m
+          [31m-[0m[0m enable_resource_name_dns_aaaa_record = false [90m-> null[0m[0m
+          [31m-[0m[0m hostname_type                        = "ip-name" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m root_block_device {
+          [31m-[0m[0m delete_on_termination = true [90m-> null[0m[0m
+          [31m-[0m[0m device_name           = "/dev/xvda" [90m-> null[0m[0m
+          [31m-[0m[0m encrypted             = false [90m-> null[0m[0m
+          [31m-[0m[0m iops                  = 100 [90m-> null[0m[0m
+          [31m-[0m[0m tags                  = {
+              [31m-[0m[0m "Project" = "advanced-iac-terraform-ansible"
+            } [90m-> null[0m[0m
+          [31m-[0m[0m tags_all              = {
+              [31m-[0m[0m "Project" = "advanced-iac-terraform-ansible"
+            } [90m-> null[0m[0m
+          [31m-[0m[0m throughput            = 0 [90m-> null[0m[0m
+          [31m-[0m[0m volume_id             = "vol-05c95e135066e665d" [90m-> null[0m[0m
+          [31m-[0m[0m volume_size           = 8 [90m-> null[0m[0m
+          [31m-[0m[0m volume_type           = "gp2" [90m-> null[0m[0m
+            [90m# (1 unchanged attribute hidden)[0m[0m
+        }
+    }
+
+[1m  # aws_internet_gateway.sandbox_gw[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_internet_gateway" "sandbox_gw" {
+      [31m-[0m[0m arn      = "arn:aws:ec2:eu-west-1:771826808190:internet-gateway/igw-0c8ce77fe6e2c6251" [90m-> null[0m[0m
+      [31m-[0m[0m id       = "igw-0c8ce77fe6e2c6251" [90m-> null[0m[0m
+      [31m-[0m[0m owner_id = "771826808190" [90m-> null[0m[0m
+      [31m-[0m[0m region   = "eu-west-1" [90m-> null[0m[0m
+      [31m-[0m[0m tags     = {
+          [31m-[0m[0m "Name" = "Sandbox IGW"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m tags_all = {
+          [31m-[0m[0m "Name"    = "Sandbox IGW"
+          [31m-[0m[0m "Project" = "advanced-iac-terraform-ansible"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m vpc_id   = "vpc-005230e2d95bf1721" [90m-> null[0m[0m
+    }
+
+[1m  # aws_key_pair.admin_key[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_key_pair" "admin_key" {
+      [31m-[0m[0m arn             = "arn:aws:ec2:eu-west-1:771826808190:key-pair/admin-key" [90m-> null[0m[0m
+      [31m-[0m[0m fingerprint     = "usqMHaRWeZPGQZMuDnL2EFWBgtmKrNJgbXc3rInxm0o=" [90m-> null[0m[0m
+      [31m-[0m[0m id              = "admin-key" [90m-> null[0m[0m
+      [31m-[0m[0m key_name        = "admin-key" [90m-> null[0m[0m
+      [31m-[0m[0m key_pair_id     = "key-027eecc9f5baf031d" [90m-> null[0m[0m
+      [31m-[0m[0m key_type        = "ed25519" [90m-> null[0m[0m
+      [31m-[0m[0m public_key      = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFbWhgXNWa72we/JcUEQ2sXIO1DRXtB+17tk293tzx83" [90m-> null[0m[0m
+      [31m-[0m[0m region          = "eu-west-1" [90m-> null[0m[0m
+      [31m-[0m[0m tags            = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all        = {
+          [31m-[0m[0m "Project" = "advanced-iac-terraform-ansible"
+        } [90m-> null[0m[0m
+        [90m# (1 unchanged attribute hidden)[0m[0m
+    }
+
+[1m  # aws_route_table.sandbox_route_table[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_route_table" "sandbox_route_table" {
+      [31m-[0m[0m arn              = "arn:aws:ec2:eu-west-1:771826808190:route-table/rtb-0bf99af254b50471f" [90m-> null[0m[0m
+      [31m-[0m[0m id               = "rtb-0bf99af254b50471f" [90m-> null[0m[0m
+      [31m-[0m[0m owner_id         = "771826808190" [90m-> null[0m[0m
+      [31m-[0m[0m propagating_vgws = [] [90m-> null[0m[0m
+      [31m-[0m[0m region           = "eu-west-1" [90m-> null[0m[0m
+      [31m-[0m[0m route            = [
+          [31m-[0m[0m {
+              [31m-[0m[0m cidr_block                 = "0.0.0.0/0"
+              [31m-[0m[0m gateway_id                 = "igw-0c8ce77fe6e2c6251"
+                [90m# (12 unchanged attributes hidden)[0m[0m
+            },
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m tags             = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all         = {
+          [31m-[0m[0m "Project" = "advanced-iac-terraform-ansible"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m vpc_id           = "vpc-005230e2d95bf1721" [90m-> null[0m[0m
+    }
+
+[1m  # aws_route_table_association.rtb_subnet[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_route_table_association" "rtb_subnet" {
+      [31m-[0m[0m id             = "rtbassoc-05354ad5b8738b275" [90m-> null[0m[0m
+      [31m-[0m[0m region         = "eu-west-1" [90m-> null[0m[0m
+      [31m-[0m[0m route_table_id = "rtb-0bf99af254b50471f" [90m-> null[0m[0m
+      [31m-[0m[0m subnet_id      = "subnet-0efeed2042e2e1d2b" [90m-> null[0m[0m
+        [90m# (1 unchanged attribute hidden)[0m[0m
+    }
+
+[1m  # aws_security_group.sandbox_sec_grp[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_security_group" "sandbox_sec_grp" {
+      [31m-[0m[0m arn                    = "arn:aws:ec2:eu-west-1:771826808190:security-group/sg-030e789f2313ef4d3" [90m-> null[0m[0m
+      [31m-[0m[0m description            = "Allow inbound SSH and HTTP traffic" [90m-> null[0m[0m
+      [31m-[0m[0m egress                 = [
+          [31m-[0m[0m {
+              [31m-[0m[0m cidr_blocks      = [
+                  [31m-[0m[0m "0.0.0.0/0",
+                ]
+              [31m-[0m[0m from_port        = 0
+              [31m-[0m[0m ipv6_cidr_blocks = []
+              [31m-[0m[0m prefix_list_ids  = []
+              [31m-[0m[0m protocol         = "-1"
+              [31m-[0m[0m security_groups  = []
+              [31m-[0m[0m self             = false
+              [31m-[0m[0m to_port          = 0
+                [90m# (1 unchanged attribute hidden)[0m[0m
+            },
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m id                     = "sg-030e789f2313ef4d3" [90m-> null[0m[0m
+      [31m-[0m[0m ingress                = [
+          [31m-[0m[0m {
+              [31m-[0m[0m cidr_blocks      = [
+                  [31m-[0m[0m "0.0.0.0/0",
+                ]
+              [31m-[0m[0m from_port        = 80
+              [31m-[0m[0m ipv6_cidr_blocks = []
+              [31m-[0m[0m prefix_list_ids  = []
+              [31m-[0m[0m protocol         = "tcp"
+              [31m-[0m[0m security_groups  = []
+              [31m-[0m[0m self             = false
+              [31m-[0m[0m to_port          = 80
+                [90m# (1 unchanged attribute hidden)[0m[0m
+            },
+          [31m-[0m[0m {
+              [31m-[0m[0m cidr_blocks      = [
+                  [31m-[0m[0m "102.22.140.192/32",
+                ]
+              [31m-[0m[0m from_port        = 22
+              [31m-[0m[0m ipv6_cidr_blocks = []
+              [31m-[0m[0m prefix_list_ids  = []
+              [31m-[0m[0m protocol         = "tcp"
+              [31m-[0m[0m security_groups  = []
+              [31m-[0m[0m self             = false
+              [31m-[0m[0m to_port          = 22
+                [90m# (1 unchanged attribute hidden)[0m[0m
+            },
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m name                   = "allow_ssh_http" [90m-> null[0m[0m
+      [31m-[0m[0m owner_id               = "771826808190" [90m-> null[0m[0m
+      [31m-[0m[0m region                 = "eu-west-1" [90m-> null[0m[0m
+      [31m-[0m[0m revoke_rules_on_delete = false [90m-> null[0m[0m
+      [31m-[0m[0m tags                   = {
+          [31m-[0m[0m "Name" = "allow_ssh_http"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m tags_all               = {
+          [31m-[0m[0m "Name"    = "allow_ssh_http"
+          [31m-[0m[0m "Project" = "advanced-iac-terraform-ansible"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m vpc_id                 = "vpc-005230e2d95bf1721" [90m-> null[0m[0m
+        [90m# (1 unchanged attribute hidden)[0m[0m
+    }
+
+[1m  # aws_subnet.sandbox_pub_subnet[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_subnet" "sandbox_pub_subnet" {
+      [31m-[0m[0m arn                                            = "arn:aws:ec2:eu-west-1:771826808190:subnet/subnet-0efeed2042e2e1d2b" [90m-> null[0m[0m
+      [31m-[0m[0m assign_ipv6_address_on_creation                = false [90m-> null[0m[0m
+      [31m-[0m[0m availability_zone                              = "eu-west-1c" [90m-> null[0m[0m
+      [31m-[0m[0m availability_zone_id                           = "euw1-az1" [90m-> null[0m[0m
+      [31m-[0m[0m cidr_block                                     = "10.0.1.0/24" [90m-> null[0m[0m
+      [31m-[0m[0m enable_dns64                                   = false [90m-> null[0m[0m
+      [31m-[0m[0m enable_lni_at_device_index                     = 0 [90m-> null[0m[0m
+      [31m-[0m[0m enable_resource_name_dns_a_record_on_launch    = false [90m-> null[0m[0m
+      [31m-[0m[0m enable_resource_name_dns_aaaa_record_on_launch = false [90m-> null[0m[0m
+      [31m-[0m[0m id                                             = "subnet-0efeed2042e2e1d2b" [90m-> null[0m[0m
+      [31m-[0m[0m ipv6_native                                    = false [90m-> null[0m[0m
+      [31m-[0m[0m map_customer_owned_ip_on_launch                = false [90m-> null[0m[0m
+      [31m-[0m[0m map_public_ip_on_launch                        = true [90m-> null[0m[0m
+      [31m-[0m[0m owner_id                                       = "771826808190" [90m-> null[0m[0m
+      [31m-[0m[0m private_dns_hostname_type_on_launch            = "ip-name" [90m-> null[0m[0m
+      [31m-[0m[0m region                                         = "eu-west-1" [90m-> null[0m[0m
+      [31m-[0m[0m tags                                           = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all                                       = {
+          [31m-[0m[0m "Project" = "advanced-iac-terraform-ansible"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m vpc_id                                         = "vpc-005230e2d95bf1721" [90m-> null[0m[0m
+        [90m# (4 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # aws_vpc.sandbox_vpc[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_vpc" "sandbox_vpc" {
+      [31m-[0m[0m arn                                  = "arn:aws:ec2:eu-west-1:771826808190:vpc/vpc-005230e2d95bf1721" [90m-> null[0m[0m
+      [31m-[0m[0m assign_generated_ipv6_cidr_block     = false [90m-> null[0m[0m
+      [31m-[0m[0m cidr_block                           = "10.0.0.0/16" [90m-> null[0m[0m
+      [31m-[0m[0m default_network_acl_id               = "acl-090935edcaebdf42f" [90m-> null[0m[0m
+      [31m-[0m[0m default_route_table_id               = "rtb-0a6451fe8fd223764" [90m-> null[0m[0m
+      [31m-[0m[0m default_security_group_id            = "sg-048a64fd36c9ca411" [90m-> null[0m[0m
+      [31m-[0m[0m dhcp_options_id                      = "dopt-0c519609d136ff685" [90m-> null[0m[0m
+      [31m-[0m[0m enable_dns_hostnames                 = false [90m-> null[0m[0m
+      [31m-[0m[0m enable_dns_support                   = true [90m-> null[0m[0m
+      [31m-[0m[0m enable_network_address_usage_metrics = false [90m-> null[0m[0m
+      [31m-[0m[0m id                                   = "vpc-005230e2d95bf1721" [90m-> null[0m[0m
+      [31m-[0m[0m instance_tenancy                     = "default" [90m-> null[0m[0m
+      [31m-[0m[0m ipv6_netmask_length                  = 0 [90m-> null[0m[0m
+      [31m-[0m[0m main_route_table_id                  = "rtb-0a6451fe8fd223764" [90m-> null[0m[0m
+      [31m-[0m[0m owner_id                             = "771826808190" [90m-> null[0m[0m
+      [31m-[0m[0m region                               = "eu-west-1" [90m-> null[0m[0m
+      [31m-[0m[0m tags                                 = {
+          [31m-[0m[0m "Name" = "sandbox-vpc"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m tags_all                             = {
+          [31m-[0m[0m "Name"    = "sandbox-vpc"
+          [31m-[0m[0m "Project" = "advanced-iac-terraform-ansible"
+        } [90m-> null[0m[0m
+        [90m# (4 unchanged attributes hidden)[0m[0m
+    }
+
+[1m  # aws_vpc_security_group_egress_rule.all_outbound[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_vpc_security_group_egress_rule" "all_outbound" {
+      [31m-[0m[0m arn                    = "arn:aws:ec2:eu-west-1:771826808190:security-group-rule/sgr-0b27de934a2260a52" [90m-> null[0m[0m
+      [31m-[0m[0m cidr_ipv4              = "0.0.0.0/0" [90m-> null[0m[0m
+      [31m-[0m[0m id                     = "sgr-0b27de934a2260a52" [90m-> null[0m[0m
+      [31m-[0m[0m ip_protocol            = "-1" [90m-> null[0m[0m
+      [31m-[0m[0m region                 = "eu-west-1" [90m-> null[0m[0m
+      [31m-[0m[0m security_group_id      = "sg-030e789f2313ef4d3" [90m-> null[0m[0m
+      [31m-[0m[0m security_group_rule_id = "sgr-0b27de934a2260a52" [90m-> null[0m[0m
+      [31m-[0m[0m tags_all               = {
+          [31m-[0m[0m "Project" = "advanced-iac-terraform-ansible"
+        } [90m-> null[0m[0m
+    }
+
+[1m  # aws_vpc_security_group_ingress_rule.http_rule[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_vpc_security_group_ingress_rule" "http_rule" {
+      [31m-[0m[0m arn                    = "arn:aws:ec2:eu-west-1:771826808190:security-group-rule/sgr-0332b9cc98dad20d9" [90m-> null[0m[0m
+      [31m-[0m[0m cidr_ipv4              = "0.0.0.0/0" [90m-> null[0m[0m
+      [31m-[0m[0m from_port              = 80 [90m-> null[0m[0m
+      [31m-[0m[0m id                     = "sgr-0332b9cc98dad20d9" [90m-> null[0m[0m
+      [31m-[0m[0m ip_protocol            = "tcp" [90m-> null[0m[0m
+      [31m-[0m[0m region                 = "eu-west-1" [90m-> null[0m[0m
+      [31m-[0m[0m security_group_id      = "sg-030e789f2313ef4d3" [90m-> null[0m[0m
+      [31m-[0m[0m security_group_rule_id = "sgr-0332b9cc98dad20d9" [90m-> null[0m[0m
+      [31m-[0m[0m tags_all               = {
+          [31m-[0m[0m "Project" = "advanced-iac-terraform-ansible"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m to_port                = 80 [90m-> null[0m[0m
+    }
+
+[1m  # aws_vpc_security_group_ingress_rule.ssh_rule[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_vpc_security_group_ingress_rule" "ssh_rule" {
+      [31m-[0m[0m arn                    = "arn:aws:ec2:eu-west-1:771826808190:security-group-rule/sgr-07e7dfa72105dbac2" [90m-> null[0m[0m
+      [31m-[0m[0m cidr_ipv4              = "102.22.140.192/32" [90m-> null[0m[0m
+      [31m-[0m[0m from_port              = 22 [90m-> null[0m[0m
+      [31m-[0m[0m id                     = "sgr-07e7dfa72105dbac2" [90m-> null[0m[0m
+      [31m-[0m[0m ip_protocol            = "tcp" [90m-> null[0m[0m
+      [31m-[0m[0m region                 = "eu-west-1" [90m-> null[0m[0m
+      [31m-[0m[0m security_group_id      = "sg-030e789f2313ef4d3" [90m-> null[0m[0m
+      [31m-[0m[0m security_group_rule_id = "sgr-07e7dfa72105dbac2" [90m-> null[0m[0m
+      [31m-[0m[0m tags_all               = {
+          [31m-[0m[0m "Project" = "advanced-iac-terraform-ansible"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m to_port                = 22 [90m-> null[0m[0m
+    }
+
+[1m  # local_file.ansible_inventory[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "local_file" "ansible_inventory" {
+      [31m-[0m[0m content              = <<-EOT
+            [web_servers]
+            34.249.61.173 ansible_user=ec2-user ansible_ssh_private_key_file=/home/kabera/amalitech/DevOps-Labs/advanced-iac/terraform/admin-key.pem
+            
+            [web_servers:vars]
+            ansible_python_interpreter=/usr/bin/python2
+        EOT [90m-> null[0m[0m
+      [31m-[0m[0m content_base64sha256 = "er5GfFyabruaXDCxOMUQP7WcjFnXG6Ysv30SjMpkek4=" [90m-> null[0m[0m
+      [31m-[0m[0m content_base64sha512 = "maf/XiEqMp9Np9buAbY50l/8lNXMs9tu+EH976wkkt5+X34Q2rSivWCXdKM0zMeY8+P5JhbKLvlOjfa+7jkaIQ==" [90m-> null[0m[0m
+      [31m-[0m[0m content_md5          = "7757dcbb3ba17a78001169583b6a3f1a" [90m-> null[0m[0m
+      [31m-[0m[0m content_sha1         = "4e08bdcde74d8c6dbd6dfd98924afc026fe5101d" [90m-> null[0m[0m
+      [31m-[0m[0m content_sha256       = "7abe467c5c9a6ebb9a5c30b138c5103fb59c8c59d71ba62cbf7d128cca647a4e" [90m-> null[0m[0m
+      [31m-[0m[0m content_sha512       = "99a7ff5e212a329f4da7d6ee01b639d25ffc94d5ccb3db6ef841fdefac2492de7e5f7e10dab4a2bd609774a334ccc798f3e3f92616ca2ef94e8df6beee391a21" [90m-> null[0m[0m
+      [31m-[0m[0m directory_permission = "0777" [90m-> null[0m[0m
+      [31m-[0m[0m file_permission      = "0777" [90m-> null[0m[0m
+      [31m-[0m[0m filename             = "./../ansible/inventory.ini" [90m-> null[0m[0m
+      [31m-[0m[0m id                   = "4e08bdcde74d8c6dbd6dfd98924afc026fe5101d" [90m-> null[0m[0m
+    }
+
+[1m  # local_sensitive_file.key_file[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "local_sensitive_file" "key_file" {
+      [31m-[0m[0m content              = (sensitive value) [90m-> null[0m[0m
+      [31m-[0m[0m content_base64sha256 = "FpIiGa6sLf2elRPNKxqrF/6m1GMJVnzCY557GI80s9Q=" [90m-> null[0m[0m
+      [31m-[0m[0m content_base64sha512 = "9njYqaITSgZrJzxOi7iwDbRZLJ2s3TfVwaq/srs7EKg/uAMWCsaPTewqXb9uc7mX6tQnQHCLvGwiAiCilb5qog==" [90m-> null[0m[0m
+      [31m-[0m[0m content_md5          = "e9cb113008664590cd7d1b83ee5e4f84" [90m-> null[0m[0m
+      [31m-[0m[0m content_sha1         = "33ae51ddac70aec761a68bde50bcafae660324ce" [90m-> null[0m[0m
+      [31m-[0m[0m content_sha256       = "16922219aeac2dfd9e9513cd2b1aab17fea6d46309567cc2639e7b188f34b3d4" [90m-> null[0m[0m
+      [31m-[0m[0m content_sha512       = "f678d8a9a2134a066b273c4e8bb8b00db4592c9dacdd37d5c1aabfb2bb3b10a83fb803160ac68f4dec2a5dbf6e73b997ead42740708bbc6c220220a295be6aa2" [90m-> null[0m[0m
+      [31m-[0m[0m directory_permission = "0700" [90m-> null[0m[0m
+      [31m-[0m[0m file_permission      = "0400" [90m-> null[0m[0m
+      [31m-[0m[0m filename             = "./admin-key.pem" [90m-> null[0m[0m
+      [31m-[0m[0m id                   = "33ae51ddac70aec761a68bde50bcafae660324ce" [90m-> null[0m[0m
+    }
+
+[1m  # tls_private_key.ssh[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "tls_private_key" "ssh" {
+      [31m-[0m[0m algorithm                     = "ED25519" [90m-> null[0m[0m
+      [31m-[0m[0m ecdsa_curve                   = "P224" [90m-> null[0m[0m
+      [31m-[0m[0m id                            = "f373dd5c4520b74d5a7f8e9afb68cab14357bd51" [90m-> null[0m[0m
+      [31m-[0m[0m private_key_openssh           = (sensitive value) [90m-> null[0m[0m
+      [31m-[0m[0m private_key_pem               = (sensitive value) [90m-> null[0m[0m
+      [31m-[0m[0m private_key_pem_pkcs8         = (sensitive value) [90m-> null[0m[0m
+      [31m-[0m[0m public_key_fingerprint_md5    = "e7:7e:eb:20:ec:53:7d:9d:05:ad:52:2c:b8:a6:ed:ed" [90m-> null[0m[0m
+      [31m-[0m[0m public_key_fingerprint_sha256 = "SHA256:usqMHaRWeZPGQZMuDnL2EFWBgtmKrNJgbXc3rInxm0o" [90m-> null[0m[0m
+      [31m-[0m[0m public_key_openssh            = <<-EOT
+            ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFbWhgXNWa72we/JcUEQ2sXIO1DRXtB+17tk293tzx83
+        EOT [90m-> null[0m[0m
+      [31m-[0m[0m public_key_pem                = <<-EOT
+            -----BEGIN PUBLIC KEY-----
+            MCowBQYDK2VwAyEAVtaGBc1ZrvbB78lxQRDaxcg7UNFe0H7Xu2Tb3e3PHzc=
+            -----END PUBLIC KEY-----
+        EOT [90m-> null[0m[0m
+      [31m-[0m[0m rsa_bits                      = 2048 [90m-> null[0m[0m
+    }
+
+[1mPlan:[0m [0m0 to add, 0 to change, 14 to destroy.
+
+Changes to Outputs:
+  [31m-[0m[0m key_name   = "admin-key" [90m-> null[0m[0m
+  [31m-[0m[0m key_path   = "/home/kabera/amalitech/DevOps-Labs/advanced-iac/terraform/admin-key.pem" [90m-> null[0m[0m
+  [31m-[0m[0m public_dns = "" [90m-> null[0m[0m
+  [31m-[0m[0m public_ip  = "34.249.61.173" [90m-> null[0m[0m
+  [31m-[0m[0m ssh_user   = "ec2-user" [90m-> null[0m[0m
+[0m[1m
+Do you really want to destroy all resources?[0m
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only 'yes' will be accepted to confirm.
+
+  [1mEnter a value:[0m [0m
+[0m[1mlocal_file.ansible_inventory: Destroying... [id=4e08bdcde74d8c6dbd6dfd98924afc026fe5101d][0m[0m
+[0m[1mlocal_file.ansible_inventory: Destruction complete after 0s[0m
+[0m[1mlocal_sensitive_file.key_file: Destroying... [id=33ae51ddac70aec761a68bde50bcafae660324ce][0m[0m
+[0m[1mlocal_sensitive_file.key_file: Destruction complete after 0s[0m
+[0m[1maws_vpc_security_group_egress_rule.all_outbound: Destroying... [id=sgr-0b27de934a2260a52][0m[0m
+[0m[1maws_route_table_association.rtb_subnet: Destroying... [id=rtbassoc-05354ad5b8738b275][0m[0m
+[0m[1maws_vpc_security_group_ingress_rule.http_rule: Destroying... [id=sgr-0332b9cc98dad20d9][0m[0m
+[0m[1maws_vpc_security_group_ingress_rule.ssh_rule: Destroying... [id=sgr-07e7dfa72105dbac2][0m[0m
+[0m[1maws_instance.sandbox_server: Destroying... [id=i-0613f724921de1bcc][0m[0m
+[0m[1maws_vpc_security_group_ingress_rule.http_rule: Destruction complete after 1s[0m
+[0m[1maws_vpc_security_group_ingress_rule.ssh_rule: Destruction complete after 1s[0m
+[0m[1maws_vpc_security_group_egress_rule.all_outbound: Destruction complete after 1s[0m
+[0m[1maws_route_table_association.rtb_subnet: Destruction complete after 2s[0m
+[0m[1maws_route_table.sandbox_route_table: Destroying... [id=rtb-0bf99af254b50471f][0m[0m
+[0m[1maws_route_table.sandbox_route_table: Destruction complete after 1s[0m
+[0m[1maws_internet_gateway.sandbox_gw: Destroying... [id=igw-0c8ce77fe6e2c6251][0m[0m
+[0m[1maws_instance.sandbox_server: Still destroying... [id=i-0613f724921de1bcc, 00m10s elapsed][0m[0m
+[0m[1maws_internet_gateway.sandbox_gw: Still destroying... [id=igw-0c8ce77fe6e2c6251, 00m10s elapsed][0m[0m
+[0m[1maws_internet_gateway.sandbox_gw: Destruction complete after 11s[0m
+[0m[1maws_instance.sandbox_server: Still destroying... [id=i-0613f724921de1bcc, 00m20s elapsed][0m[0m
+[0m[1maws_instance.sandbox_server: Destruction complete after 22s[0m
+[0m[1maws_key_pair.admin_key: Destroying... [id=admin-key][0m[0m
+[0m[1maws_subnet.sandbox_pub_subnet: Destroying... [id=subnet-0efeed2042e2e1d2b][0m[0m
+[0m[1maws_security_group.sandbox_sec_grp: Destroying... [id=sg-030e789f2313ef4d3][0m[0m
+[0m[1maws_key_pair.admin_key: Destruction complete after 0s[0m
+[0m[1mtls_private_key.ssh: Destroying... [id=f373dd5c4520b74d5a7f8e9afb68cab14357bd51][0m[0m
+[0m[1mtls_private_key.ssh: Destruction complete after 0s[0m
+[0m[1maws_subnet.sandbox_pub_subnet: Destruction complete after 1s[0m
+[0m[1maws_security_group.sandbox_sec_grp: Destruction complete after 1s[0m
+[0m[1maws_vpc.sandbox_vpc: Destroying... [id=vpc-005230e2d95bf1721][0m[0m
+[0m[1maws_vpc.sandbox_vpc: Destruction complete after 1s[0m
+Releasing state lock. This may take a few moments...
+[0m[1m[32m
+Destroy complete! Resources: 14 destroyed.[0m

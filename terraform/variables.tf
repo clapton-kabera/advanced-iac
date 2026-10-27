@@ -6,9 +6,9 @@
 #---------------------------------------------------------------------------------------------------- 
 
 variable "key_name" {
-  type = string
+  type        = string
   description = "The name of the ssh key used for the EC2 instance"
-  default = "admin-key"
+  default     = "admin-key"
 }
 
 variable "vpc_cidr" {
@@ -18,9 +18,9 @@ variable "vpc_cidr" {
 }
 
 variable "egress_cidr" {
-  type = string
+  type        = string
   description = "CIDR block for outbound addresses allowed"
-  default = "0.0.0.0/0"
+  default     = "0.0.0.0/0"
 }
 
 variable "pub_cidr" {

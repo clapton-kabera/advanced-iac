@@ -1,0 +1,5 @@
+---
+# defaults file for roles/nginx
+
+nginx_web_root: /usr/share/nginx/html
+app_title: "Deployed with terraform and ansible for amali"

@@ -10,7 +10,7 @@ output "public_dns" {
 }
 
 output "ssh_user" {
- value = "ec2-user"
+  value = "ec2-user"
 }
 
 output "key_name" {

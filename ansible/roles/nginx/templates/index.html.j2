@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Welcome to Amali</title>
+  </head>
+  <body>
+    <h2>Hello AmaliTechie</h2>
+      
+      <p>This is a greeting from the server <strong>{{ ansible_facts['hostname'] }}</strong></p>
+      <p> at IP address: <strong>{{ ansible_facts['default_ipv4']['address'] }}</strong></p>
+
+  </body>
+</html>

@@ -1,0 +1,19 @@
+---
+# tasks file for roles/nginx
+- name: Install nginx from amazon linux extras
+  ansible.builtin.command: amazon-linux-extras install -y nginx1
+  args:
+    creates: /usr/sbin/nginx
+
+- name: Deploy the web page
+  ansible.builtin.template:
+    src: index.html.j2
+    dest: "{{ nginx_web_root }}/index.html"
+    mode: 0644
+  notify: Restart nginx
+
+- name: Ensure nginx is started and enabled at boot
+  ansible.builtin.service:
+    name: nginx
+    state: started
+    enabled: true

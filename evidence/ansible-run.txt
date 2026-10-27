@@ -1,0 +1,24 @@
+
+PLAY [Configure web server] ****************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [34.249.61.173]
+
+TASK [Wait for ssh connection to work] *****************************************
+ok: [34.249.61.173]
+
+TASK [nginx : Install nginx from amazon linux extras] **************************
+changed: [34.249.61.173]
+
+TASK [nginx : Deploy the web page] *********************************************
+changed: [34.249.61.173]
+
+TASK [nginx : Ensure nginx is started and enabled at boot] *********************
+changed: [34.249.61.173]
+
+RUNNING HANDLER [nginx : Restart nginx] ****************************************
+changed: [34.249.61.173]
+
+PLAY RECAP *********************************************************************
+34.249.61.173              : ok=6    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

@@ -89,3 +89,4 @@ terraform/*.tfstate*
 # 7. ansible inventory
 #=========================================
 ansible/inventory.ini
+ansible/ansible-env/
