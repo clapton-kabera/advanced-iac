@@ -78,3 +78,14 @@ target/
 *.tar.gz
 *.rar
 *.7z
+
+#=========================================
+# 6. terraform files
+#=========================================
+terraform/.terraform/
+terraform/*.tfstate*
+
+#=========================================
+# 7. ansible inventory
+#=========================================
+ansible/inventory.ini
