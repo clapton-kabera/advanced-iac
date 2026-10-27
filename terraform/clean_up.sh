@@ -11,7 +11,6 @@
 set -euo pipefail
 
 readonly BUCKET_NAME="sandbox-remote-backend723354237"
-readonly DYNAMO_TABLE_NAME="state-locking-db"
 
 # deletes every entry of one kind ("Versions" or "DeleteMarkers") from a versioned bucket,
 # in batches of up to 1000 (the delete-objects limit)
@@ -46,9 +45,5 @@ delete_all_versions "${BUCKET_NAME}" "DeleteMarkers"
 # delete the s3 bucket itself
 echo "Deleting the S3 bucket..."
 aws s3api delete-bucket --bucket "${BUCKET_NAME}"
-
-# delete the the dynamodb
-echo "Deleting the DynamoDB table..."
-aws dynamodb delete-table --table-name "$DYNAMO_TABLE_NAME"
 
 echo "Done..."

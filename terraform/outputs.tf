@@ -10,7 +10,7 @@ output "public_dns" {
 }
 
 output "ssh_user" {
- value = aws
+ value = "ec2-user"
 }
 
 output "key_name" {
@@ -18,7 +18,7 @@ output "key_name" {
 }
 
 output "key_path" {
-
+  value = abspath(local_sensitive_file.key_file.filename)
 }
 
 output "public_ip" {

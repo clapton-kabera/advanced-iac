@@ -31,8 +31,8 @@ variable "pub_cidr" {
 
 variable "source_cidr" {
   type        = string
-  description = "Source IP address for SSH traffic"
-  default     = "102.22.146.226/32"
+  description = "Source IP address for HTTP traffic"
+  default     = "0.0.0.0/0"
 }
 
 variable "instance_type" {

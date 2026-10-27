@@ -3,15 +3,15 @@
 # author: Kabera Clapton
 #
 # description: Provisions the following: a VPC, Public Subnet, Internet Gateway with Routes to the 
-#              to the subnet, Subnet to allow SSH and HTTP traffic to and from and EC2 t2.micro
-#              instance, an S3 bucket and DynamoDB instance for Remote state handling.
+#              to the subnet, Subnet to allow SSH and HTTP traffic to and from and an EC2 t2.micro
+#              instance.
 #----------------------------------------------------------------------------------------------------
 
 /*
   Setup the providers and their versions
 */
 terraform {
-  required_version = ">= 1.5"
+  required_version = ">= 1.10"
 
   required_providers {
     aws = {
@@ -41,7 +41,7 @@ provider "aws" {
 
   default_tags {
     tags = {
-      Project = "iac-terraform-lab1"
+      Project = "advanced-iac-terraform-ansible"
     }
   }
 }
@@ -50,7 +50,7 @@ provider "aws" {
   fetch my current public ip so that it used in the security group rule
 */
 data "http" "my_public_ip" {
-  url = "http://checkip.amazonaws.com"
+  url = "https://checkip.amazonaws.com"
 }
 
 /*
@@ -155,7 +155,7 @@ resource "aws_vpc_security_group_egress_rule" "all_outbound" {
   security_group_id = aws_security_group.sandbox_sec_grp.id
 
   cidr_ipv4 = var.egress_cidr
-  ip_protocol = -1
+  ip_protocol = "-1"
 }
 
 /*
@@ -181,7 +181,7 @@ data "aws_ami" "al2_latest" {
   Create the EC2 Instance in this VPC
 */
 resource "aws_instance" "sandbox_server" {
-  ami           = data.aws_ami.ubuntu.id
+  ami           = data.aws_ami.al2_latest.id
   instance_type = var.instance_type
 
   tags = {
@@ -201,7 +201,7 @@ resource "aws_instance" "sandbox_server" {
 resource "local_file" "ansible_inventory" {
   content = templatefile("${path.root}/inventory.tftpl", {
     ec2_public_ip = aws_instance.sandbox_server.public_ip
-    private_key = var.key_name
+    key_path = abspath(local_sensitive_file.key_file.filename)
   })
 
   filename = "${path.root}/../ansible/inventory.ini"
@@ -228,6 +228,6 @@ resource "aws_key_pair" "admin_key" {
 resource "local_sensitive_file" "key_file" {
   content = tls_private_key.ssh.private_key_openssh
   filename = "${path.root}/${var.key_name}.pem"
-  file_permissions = "0400"
+  file_permission = "0400"
 }
 
