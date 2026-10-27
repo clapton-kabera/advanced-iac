@@ -196,6 +196,18 @@ resource "aws_instance" "sandbox_server" {
 }
 
 /*
+  Fill in the variables in the inventory template file and create the .ini file
+*/
+resource "local_file" "ansible_inventory" {
+  content = templatefile("${path.root}/inventory.tftpl", {
+    ec2_public_ip = aws_instance.sandbox_server.public_ip
+    private_key = var.key_name
+  })
+
+  filename = "${path.root}/../ansible/inventory.ini"
+}
+
+/*
   set the encryption algorithm for the key to be generated
 */
 resource "tls_private_key" "ssh" {
